@@ -4,7 +4,7 @@ which countries have risen in the rankings based on the number of comments betwe
 -- create table for Jan 2020 ranking
 -- left join Jan 2020 with Dec 2019 
 -- add filter to indicate rising 
-`` 
+
 with dec_summary as (
 select b.country, a.no_comments
 ,WINDOW
@@ -27,5 +27,5 @@ left join dec_summary d
 on c.country = d.country
 where 
 
-``
+
 note: rank() will skip the ranking numbers, e.g. 1,1,1,4,4,6; while dense_rank() will show 1,1,1,2,2,3,3,3,3,4
