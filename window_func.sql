@@ -30,4 +30,11 @@ on c.country = d.country
 where c.jan_ranking > d.dec_ranking
 
 
-note: rank() will skip the ranking numbers, e.g. 1,1,1,4,4,6; while dense_rank() will show 1,1,1,2,2,3,3,3,3,4
+note: rank() will skip the ranking numbers, e.g. 1,1,1,4,4,6; while dense_rank() will show 1,1,1,2,2,3,3,3,3,4; row_number() will show 1234
+
+-- rank()
+select *, 
+rank() over(partition by depart_name order by salary desc) as rnk,
+dense_rank over(partition by depart_name order by salary) as DENSE_rnk,
+row_number() over(partition by dept_name order by salary) as rn
+from XX table 
