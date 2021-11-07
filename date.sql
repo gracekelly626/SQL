@@ -1,3 +1,16 @@
+# Facebook Question
+return the total no. of comments received for each user in the last 30 days. assume today is 2020-02-10
+-- filter comments by date
+-- sum no. of comments
+-- group by user_id
+select user_id, 
+sum(on_comments)
+from fb_comments_count
+where created_at between ('2020-02-10' :: date - 30 * interval '1 day') and '2020-02-10':: date
+group by user_id
+
+
+# Facebook Question 
 with new_users as (
      select date_part('month', new_user_start_date) as month, 
             count(distinct user_id) as new_users 
