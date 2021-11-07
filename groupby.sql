@@ -17,11 +17,11 @@ Note:
 *group by country, city; cannot group by country alone
 
 ## Facebook Example
-SELECT country, 
+select country, 
  count(CASE THEN carrier = 'a' THEN phone_number ELSE NULL END) as a, 
  count(CASE THEN carrier = 'B' THEN phone_number ELSE NULL END) as b, 
  count(CASE THEN carrier = 'C' THEN phone_number ELSE NULL END) as c
- from fb_sms_sends
- where ds = '08-07-2020'
- group by country, carrier 
- order by country ASC
+from fb_sms_sends
+where ds = '08-07-2020'
+group by country, carrier 
+order by country ASC
