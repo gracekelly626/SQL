@@ -13,7 +13,7 @@ having count(*) > 1
 order by count(*) ASC 
 Note:
 *where clause doesn't work with aggregate function; we must use having
-*order should be: where, group by, having, order by
+*query clause order should be: where, group by, having, order by
 *group by country, city; cannot group by country alone
 
 ## Facebook Example
