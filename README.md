@@ -1,3 +1,3 @@
 ## SQL
-window function
-percetage
+- window function
+- percetage
