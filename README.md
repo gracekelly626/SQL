@@ -1,3 +1,3 @@
 ## SQL
 - window function
-- percentage
+- case when
